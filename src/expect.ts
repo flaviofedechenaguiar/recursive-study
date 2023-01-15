@@ -1,11 +1,16 @@
+function success(message: string) {
+  console.log("\x1b[42m%s\x1b[0m", message);
+}
+
+function error(message: string) {
+  console.log("\x1b[41m%s\x1b[0m", message);
+  throw new Error(message);
+}
+
 export function expect(expected: any) {
   function handleMessage(accepted: boolean, expected: any, value: any) {
-    if (!accepted) {
-      const message = `Expected ${expected} but got ${value}`;
-      console.log("\x1b[41m%s\x1b[0m", message);
-      throw new Error(message);
-    }
-    console.log("\x1b[42m%s\x1b[0m", "Test passed");
+    if (!accepted) error(`Expected ${expected} but got ${value}`);
+    success("Test passed");
   }
   return {
     toBe: (value: any) => {
