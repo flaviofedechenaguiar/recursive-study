@@ -17,4 +17,4 @@ function invertArray(array: number[], left: number, right: number): void {
 
 const arr = [1, 2, 3, 4, 5];
 invertArray(arr, 0, 4);
-expect(arr).toBeArray([5, 4, 3, 2, 1]);
+expect(arr).toEqual([5, 4, 3, 2, 1]);

@@ -1,5 +1,5 @@
 import { expect } from "../expect";
-import { mockResult } from "./exericio9-parent-mock";
+import { mockResult } from "./exercise9-parent-mock";
 
 const data = [
   { slug: "notebook", parent_slug: "computer" },
@@ -26,4 +26,4 @@ function recursive(data: any[], parent_slug: any = null) {
   return items;
 }
 
-expect(recursive(data)).toBeArray(mockResult);
+expect(recursive(data)).toEqual(mockResult);
