@@ -16,7 +16,7 @@ export function expect(expected: any) {
     toBe: (value: any) => {
       handleMessage(expected === value, expected, value);
     },
-    toBeArray(value: any[]) {
+    toEqual(value: any[]) {
       handleMessage(
         JSON.stringify(expected) === JSON.stringify(value),
         expected,
